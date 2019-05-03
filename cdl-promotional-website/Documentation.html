@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>System Documentation</title>
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        .modal-content {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+        @-webkit-keyframes zoom {
+            from {-webkit-transform:scale(0)}
+            to {-webkit-transform:scale(1)}
+        }
+
+        @keyframes zoom {
+            from {transform:scale(0)}
+            to {transform:scale(1)}
+        }
+    </style>
+</head>
+<body>
+<header align="center">
+    <h2>Navigation</h2>
+    <a href="./index.html" >Main</a> <br>
+    <a href="./about_us.html" >About Us</a> <br>
+    <a href="./Test.html" >Test</a> 
+</header>
+<h1 align="center">System Documentation</h1>
+<div id="Glossary" style="text-align: center; margin: 30px;">
+    <h2>Glossary</h2>
+    <p><a href="#p1">Phase 1</a><br>
+        <a href="#p2">Phase 2</a><br>
+        <a href="#p3">Phase 3</a></p>
+</div>
+
+<section id="phase1" style="text-align: center;">
+    <h2><a name="p1"></a>Phase 1</h2>
+    <div id="GUI" style="margin: 30px;">
+        <h3>GUI</h3>
+        <div class="row">
+            <div class="column" style="float: left; width: 25%;">
+                <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/phases/Phase1/GUI/Create%20Account.jpg"
+                     id="CA" alt="Create Account" class="modal-content" height="200px" width="375px">
+                <div id="CAM" class="modal">
+                    <img class="modal-content" id="CAmodal">
+                </div>
+
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById('CAM');
+                    var img = document.getElementById('CA');
+                    var modalImg = document.getElementById("CAmodal");
+                    img.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                    }
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+            </div>
+            <div class="column" style="float: left; width: 25%;">
+                <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/phases/Phase1/GUI/Create%20Form%20V5.jpg"
+                     id="CF" alt="Create Form" class="modal-content" height="400px" width="300px">
+                <div id="CFM" class="modal">
+                    <img class="modal-content" id="CFmodal">
+                </div>
+
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById('CFM');
+                    var img = document.getElementById('CF');
+                    var modalImg = document.getElementById("CFmodal");
+                    img.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                    }
+
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+            </div>
+            <div class="column" style="float: left; width: 25%;">
+                <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/phases/Phase1/GUI/Fill%20Out%20Form.jpg"
+                     id="FOF" alt="Fill Out Form" class="modal-content" height="400px" width="300px">
+                <div id="FOFM" class="modal">
+                    <img class="modal-content" id="FOFmodal">
+                </div>
+
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById('FOF');
+                    var img = document.getElementById('FOF');
+                    var modalImg = document.getElementById("FOFmodal");
+                    img.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                    }
+
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+            </div>
+            <div class="column" style="float: right; width: 25%;">
+                <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/phases/Phase1/GUI/Result.jpg"
+                     id="R" alt="Result" class="modal-content" height="300px" width="300px">
+                <div id="RM" class="modal">
+                    <img class="modal-content" id="Rmodal">
+                </div>
+
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById('RM');
+                    var img = document.getElementById('R');
+                    var modalImg = document.getElementById("Rmodal");
+                    img.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                    }
+
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <div id="UseCases" style="margin: 30px; clear:both;">
+        <h3>Use Cases</h3>
+        <div class="row">
+            <div class="column" style="float: left; width: 50%; text-align: left;">
+                <p>
+                <h4>Create Driver Account</h4><br>
+                <b>Basic Course:</b>
+                <br> When the Driver clicks the Create Account button, the system shows the Create Account page.
+                The system generates and displays a random ID and the Driver enters a password and clicks the Submit
+                button. The system makes sure password is valid and creates the account. The system displays a
+                Confirmation page.
+                <br><br>
+                <b>Alternative Course:</b>
+                <br>
+                Driver enters invalid password: System prompts the Driver on the Create Account page to enter a valid password. The Driver then types in new password and the system verifies that it is valid.
+                No password entered by Driver: System displays error message on the Create Account page screen that Driver password field must not be blank.  The Driver then types in a password and the system verifies that it is valid.
+                </p>
+            </div>
+            <div class="column" style="float: right; width: 50%; text-align: left;">
+                <p>
+                <h4>Create Form</h4><b>Base Course:</b><br>
+                Admin selects either Selected Combo Box or Selected Text Box and clicks the Add Button. If Selected Text Box is chosen, system displays additional option of specifying a Regular Expression to restrict Admin’s input. The system prompts the Admin to drag and drop the components to the Form. The Admin marks component as being a required field, the system displays an arrow to show this visually.  Admin clicks the Save Form Button and system saves the Form to Admin Account.
+                <br><br>
+                <b>Alternative Course:</b>
+                <br>
+                Form Creator not logged in: System displays Login Page. Driver is logged in: System displays Home page with an error message Regular Expression Incorrect: System displays error message
+                </p>
+            </div>
+        </div>
+        <div class="row" style="clear:both;">
+            <div class="column" style="float: left; width: 50%; text-align: left;">
+                <p>
+                <h4>Fill Out Form Use Case</h4>
+                <br>
+                <b>Basic Course:</b>
+                <br>
+                System displays CDL Form Page. Driver fills out the forms with their PHI, age, and city. System displays certain questions depending on the Driver responses. Driver clicks Submit Button and the system displays the Results Page.
+                <br><br>
+                <b>Alternative Courses:</b>
+                <br>
+                Driver Saves and Exits Form: Driver clicks the Save Button on the form. System saves all of the information to the Database. Driver closes the application and system logs the Driver out.
+                Invalid Data Entered: System displays error message for Driver to enter correct information.
+                Incomplete Form Submitted: System alerts Driver to fill out all needed information.
+                </p>
+            </div>
+            <div class="column" style="float: right; width: 50%; text-align: left;">
+                <p>
+                <h4>Results</h4>
+                <b>Basic Course:</b><br>
+                Driver clicks Saved Forms button, system displays Saved Forms page.  System displays all previously created Questionnaire forms. Driver clicks the Download Medical Examination Report Form link then clicks the Done button and the system displays the Homepage.
+                <br><br>
+                <b>Alternative Course:</b><br>
+                Waiver Forms are needed: System displays links for applicable Waiver Forms and prompts Driver to download the Waiver Forms and Medical Examination Report.
+                User closes the page and reopens it: System invokes Login use case. Driver re-enters their ID and password.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="ClassdiagramUseCase" style="margin: 30px; clear:both;">
+        <div class="column">
+            <h3>Class Diagram</h3>
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRw%0D%0AOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWxuczpsdWNpZD0ibHVjaWQiIHdpZHRoPSI4NjAi%0D%0AIGhlaWdodD0iOTEyIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNjAgLTI3Ljk5OTY2NTgwNzc3%0D%0AMzA3KSIgbHVjaWQ6cGFnZS10YWItaWQ9IjBfMCI+PHBhdGggZD0iTTAgMGgxNzYwdjEzNjBIMHoi%0D%0AIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJNMjQwIDEzMGMwLTI3LjYgMjIuNC01MCA1MC01MGg1NjBj%0D%0AMjcuNiAwIDUwIDIyLjQgNTAgNTB2NzQwYzAgMjcuNi0yMi40IDUwLTUwIDUwSDI5MGMtMjcuNiAw%0D%0ALTUwLTIyLjQtNTAtNTB6TTE1OS43NSA5OS43NWMwIDEwLjktOC44NCAxOS43NS0xOS43NSAxOS43%0D%0ANS0xMC45IDAtMTkuNzUtOC44NC0xOS43NS0xOS43NUMxMjAuMjUgODguODUgMTI5LjEgODAgMTQw%0D%0AIDgwYzEwLjkgMCAxOS43NSA4Ljg0IDE5Ljc1IDE5Ljc1eiIgc3Ryb2tlPSIjMDAwIiBzdHJva2Ut%0D%0Ad2lkdGg9IjIiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJNMTAwIDgwaDgwdjE1OGgtODB6IiBmaWxs%0D%0APSJub25lIi8+PHBhdGggZD0iTTE0MCAxMTkuNXY1NS4zbDQwIDYzLjJtLTQwLTYzLjJMMTAwIDIz%0D%0AOG0wLTk4Ljc1aDgwIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIv%0D%0APjx1c2UgeGxpbms6aHJlZj0iI2EiIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMjAsMjM4KSB0%0D%0AcmFuc2xhdGUoOTQuNTUgMTQuNikiLz48cGF0aCBkPSJNMTM5Ljc1IDQ5OS43NWMwIDEwLjktOC44%0D%0ANCAxOS43NS0xOS43NSAxOS43NS0xMC45IDAtMTkuNzUtOC44NC0xOS43NS0xOS43NSAwLTEwLjkg%0D%0AOC44NC0xOS43NSAxOS43NS0xOS43NSAxMC45IDAgMTkuNzUgOC44NCAxOS43NSAxOS43NXoiIHN0%0D%0Acm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSIjZmZmIi8+PHBhdGggZD0iTTgwIDQ4%0D%0AMGg4MHYxNThIODB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTEyMCA1MTkuNXY1NS4zbDQwIDYz%0D%0ALjJtLTQwLTYzLjJMODAgNjM4bTAtOTguNzVoODAiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRo%0D%0APSIyIiBmaWxsPSJub25lIi8+PHVzZSB4bGluazpocmVmPSIjYiIgdHJhbnNmb3JtPSJtYXRyaXgo%0D%0AMSwwLDAsMSwwLDYzOCkgdHJhbnNsYXRlKDk2LjEgMTQuNikiLz48cGF0aCBkPSJNNDYwIDE0MGgy%0D%0ANDB2NDBINDYweiIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMCIgc3Ryb2tlLXdpZHRo%0D%0APSIyIiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAiLz48dXNlIHhsaW5rOmhyZWY9IiNjIiB0%0D%0AcmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDQ2NSwxNDUpIHRyYW5zbGF0ZSg1Ny4wMjUgMTguNiki%0D%0ALz48cGF0aCBkPSJNNDgwIDgzMGMwIDM4LjY2LTQwLjMgNzAtOTAgNzBzLTkwLTMxLjM0LTkwLTcw%0D%0AIDQwLjMtNzAgOTAtNzAgOTAgMzEuMzQgOTAgNzB6IiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0%0D%0AaD0iMiIgZmlsbD0iI2ZmZiIvPjx1c2UgeGxpbms6aHJlZj0iI2QiIHRyYW5zZm9ybT0ibWF0cml4%0D%0AKDEsMCwwLDEsMzA1LDc2NSkgdHJhbnNsYXRlKDU1LjA1IDY4LjYwMDAwMDAwMDAwMDAxKSIvPjxw%0D%0AYXRoIGQ9Ik02MjAgNTkwYzAgMzguNjYtNDAuMyA3MC05MCA3MHMtOTAtMzEuMzQtOTAtNzAgNDAu%0D%0AMy03MCA5MC03MCA5MCAzMS4zNCA5MCA3MHoiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIy%0D%0AIiBmaWxsPSIjZmZmIi8+PHVzZSB4bGluazpocmVmPSIjZSIgdHJhbnNmb3JtPSJtYXRyaXgoMSww%0D%0ALDAsMSw0NDUsNTI1KSB0cmFuc2xhdGUoMzMuMTc1IDY4LjYwMDAwMDAwMDAwMDAxKSIvPjx1c2Ug%0D%0AeGxpbms6aHJlZj0iI2YiIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsNDQ1LDUyNSkgdHJhbnNs%0D%0AYXRlKDYwLjk3NDk5OTk5OTk5OTk5NCA2OC42MDAwMDAwMDAwMDAwMSkiLz48dXNlIHhsaW5rOmhy%0D%0AZWY9IiNnIiB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDQ0NSw1MjUpIHRyYW5zbGF0ZSg5NC45%0D%0ANzUgNjguNjAwMDAwMDAwMDAwMDEpIi8+PHBhdGggZD0iTTg0MCAxNzBjMCAzOC42Ni00MC4zIDcw%0D%0ALTkwIDcwcy05MC0zMS4zNC05MC03MCA0MC4zLTcwIDkwLTcwIDkwIDMxLjM0IDkwIDcweiIgc3Ry%0D%0Ab2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9IiNmZmYiLz48dXNlIHhsaW5rOmhyZWY9%0D%0AIiNoIiB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDY2NSwxMDUuMDAwMDAwMDAwMDAwMDEpIHRy%0D%0AYW5zbGF0ZSgzNC42MjUgNjguNjAwMDAwMDAwMDAwMDEpIi8+PHVzZSB4bGluazpocmVmPSIjaSIg%0D%0AdHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMSw2NjUsMTA1LjAwMDAwMDAwMDAwMDAxKSB0cmFuc2xh%0D%0AdGUoOTMuNTI1IDY4LjYwMDAwMDAwMDAwMDAxKSIvPjxwYXRoIGQ9Ik01MDAgMzkwYzAgMzguNjYt%0D%0ANDAuMyA3MC05MCA3MHMtOTAtMzEuMzQtOTAtNzAgNDAuMy03MCA5MC03MCA5MCAzMS4zNCA5MCA3%0D%0AMHoiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSIjZmZmIi8+PHVzZSB4bGlu%0D%0AazpocmVmPSIjaCIgdHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMSwzMjUsMzI1KSB0cmFuc2xhdGUo%0D%0AMjMuMDQ5OTk5OTk5OTk5OTk3IDY4LjYwMDAwMDAwMDAwMDAxKSIvPjx1c2UgeGxpbms6aHJlZj0i%0D%0AI2oiIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMzI1LDMyNSkgdHJhbnNsYXRlKDgxLjk1IDY4%0D%0ALjYwMDAwMDAwMDAwMDAxKSIvPjxwYXRoIGQ9Ik01MDAgMTcwYzAgMzguNjYtNDAuMyA3MC05MCA3%0D%0AMHMtOTAtMzEuMzQtOTAtNzAgNDAuMy03MCA5MC03MCA5MCAzMS4zNCA5MCA3MHoiIHN0cm9rZT0i%0D%0AIzAwMCIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSIjZmZmIi8+PHVzZSB4bGluazpocmVmPSIjayIg%0D%0AdHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMSwzMjUsMTA1LjAwMDAwMDAwMDAwMDAxKSB0cmFuc2xh%0D%0AdGUoNjMuMDI1IDY4LjYwMDAwMDAwMDAwMDAxKSIvPjxwYXRoIGQ9Ik01MDEgMTcwaDEzOS43NiIg%0D%0AZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik01MDEgMTcwaDkuMzJtOS4zMiAwaDE4LjYzbTkuMzIgMGgx%0D%0AOC42Mm05LjMyIDBoMTguNjRtOS4zIDBoMTguNjVtOS4zMiAwaDkuMyIgc3Ryb2tlPSIjMDAwIiBz%0D%0AdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNNTAxIDE3MWgtMS4wM2wuMDMt%0D%0AMXYtMWgxek02NTUuNzYgMTcwbC0xNC4yNiA0LjY0di05LjI4eiIvPjxwYXRoIGQ9Ik02NTkgMTcw%0D%0AbC0xOC41IDZ2LTEyem0tMTYuNSAzLjI2bDEwLjAzLTMuMjYtMTAuMDMtMy4yNnoiLz48cGF0aCBk%0D%0APSJNMTQxIDE3MGgxNzhNMTQxIDE3MGgtMyIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIi%0D%0AIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMzIwIDE3MHYxaC0xdi0yaDEuMDN6Ii8+PHBhdGggZD0i%0D%0ATTEyMSA1NzBoODl2MjYwaDg5TTEyMSA1NzBoLTMiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRo%0D%0APSIyIiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTMwMCA4MzB2MWgtMXYtMmgxLjAzeiIvPjxwYXRo%0D%0AIGQ9Ik00OTkuMjQgODMwSDUzMFY2NjEiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNNDk5LjI0IDgz%0D%0AMGg5LjVtOS41MiAwSDUzMHYtNy4zbTAtOS41di0xOS4wMm0wLTkuNTJ2LTE5LjAybTAtOS41Vjcz%0D%0ANy4xbTAtOS41di0xOS4wNG0wLTkuNXYtMTkuMDNtMC05LjUyVjY2MSIgc3Ryb2tlPSIjMDAwIiBz%0D%0AdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNNDk4LjUgODM0LjY0TDQ4NC4y%0D%0ANCA4MzBsMTQuMjYtNC42NHoiLz48cGF0aCBkPSJNNDk5LjUgODM2bC0xOC41LTYgMTguNS02em0t%0D%0AMTIuMDMtNmwxMC4wMyAzLjI2di02LjUyek01MzAgNjYwaDF2MWgtMnYtMS4wM3oiLz48cGF0aCBk%0D%0APSJNNDgwIDc0MGgyNDB2NDBINDgweiIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMCIg%0D%0Ac3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAiLz48dXNlIHhsaW5r%0D%0AOmhyZWY9IiNjIiB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDQ4NSw3NDUpIHRyYW5zbGF0ZSg1%0D%0ANy4wMjUgMTguNikiLz48cGF0aCBkPSJNMTYwIDUzOC4yNWgxMzkuNVY1OTBINDM5IiBzdHJva2U9%0D%0AIiMwMDAiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIvPjxwYXRoLz48cGF0aCBkPSJNNDQw%0D%0AIDU5MHYxaC0xdi0yaDEuMDN6Ii8+PHBhdGggZD0iTTEyMCA0Nzl2LTg5aDE5OSIgc3Ryb2tlPSIj%0D%0AMDAwIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMTIxIDQ4MGgtMnYt%0D%0AMWgyek0zMjAgMzkwdjFoLTF2LTJoMS4wM3oiLz48cGF0aCBkPSJNMjIwIDI2MGgyNDB2NDBIMjIw%0D%0AeiIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMCIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxs%0D%0APSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAiLz48dXNlIHhsaW5rOmhyZWY9IiNsIiB0cmFuc2Zvcm09%0D%0AIm1hdHJpeCgxLDAsMCwxLDIyNSwyNjUpIHRyYW5zbGF0ZSg1Ny4wMjUgMTguNikiLz48cGF0aCBk%0D%0APSJNNDEwIDMxOXYtNTkuNzYiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNNDEwIDMxOXYtOS45Nm0w%0D%0ALTkuOTZ2LTE5LjkybTAtOS45NnYtOS45NiIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIi%0D%0AIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNNDExIDMyMC4wM2wtMS0uMDNoLTF2LTFoMnpNNDE0LjY0%0D%0AIDI1OC41aC05LjI4bDQuNjQtMTQuMjZ6Ii8+PHBhdGggZD0iTTQxNiAyNTkuNWgtMTJsNi0xOC41%0D%0Aem0tOS4yNi0yaDYuNTJMNDEwIDI0Ny40N3oiLz48cGF0aCBkPSJNNDgzLjYgMjExLjcySDUzMHYy%0D%0AODkuMDQiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNNDgzLjYgMjExLjcyaDEwLjE3bTEwLjE3IDBo%0D%0AMjAuMzNtNS43MyA0LjQzdjIwLjMzbTAgMTAuMTd2MjAuMzNtMCAxMC4xNnYyMC4zM20wIDEwLjE3%0D%0AdjIwLjMzbTAgMTAuMTZ2MjAuMzNtMCAxMC4xNnYyMC4zM20wIDEwLjE3djIwLjMzbTAgMTAuMTZ2%0D%0AMjAuMzRtMCAxMC4xN3YyMC4zM20wIDEwLjE3djEwLjE2IiBzdHJva2U9IiMwMDAiIHN0cm9rZS13%0D%0AaWR0aD0iMiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik00ODMuNiAyMTIuNzJoLTIuM2wuMi0uMiAx%0D%0ALjY3LTEuOGguNDR6TTUzMCA1MTUuNzZsLTQuNjQtMTQuMjZoOS4yOHoiLz48cGF0aCBkPSJNNTMw%0D%0AIDUxOWwtNi0xOC41aDEyem0tMy4yNi0xNi41bDMuMjYgMTAuMDMgMy4yNi0xMC4wM3oiLz48cGF0%0D%0AaCBkPSJNNDgwIDM2MGgyNDB2NDBINDgweiIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0i%0D%0AMCIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAiLz48dXNlIHhs%0D%0AaW5rOmhyZWY9IiNjIiB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDQ4NSwzNjUpIHRyYW5zbGF0%0D%0AZSg1Ny4wMjUgMTguNikiLz48cGF0aCBkPSJNMTIwIDQ3OVYzNTBoOTBWMjMwaDEyOS44NnYtMTQu%0D%0AOCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJN%0D%0AMTIxIDQ4MGgtMnYtMWgyek0zMzkuMzMgMjEzLjM1bDEuNTQgMS40M3YuNDRsLTItLjAyLjAyLTIu%0D%0AM3oiLz48cGF0aCBkPSJNMTQwIDc5VjM5aDYxMHY2MCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lk%0D%0AdGg9IjIiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMTQxIDgwaC0ydi0xaDJ6TTc1MSAxMDAuMDNs%0D%0ALTEtLjAzaC0xdi0xaDJ6Ii8+PGRlZnM+PHBhdGggZD0iTTIwNSAwbC0yOC03Mkg2NEwzNiAwSDFs%0D%0AMTAxLTI0OGgzOEwyMzkgMGgtMzR6bS0zOC05OWwtNDctMTIzYy0xMiA0NS0zMSA4Mi00NiAxMjNo%0D%0AOTMiIGlkPSJtIi8+PHBhdGggZD0iTTg1LTE5NGMzMSAwIDQ4IDEzIDYwIDMzbC0xLTEwMGgzMmwx%0D%0AIDI2MWgtMzBjLTItMTAgMC0yMy0zLTMxQzEzNC04IDExNiA0IDg1IDQgMzIgNCAxNi0zNSAxNS05%0D%0ANGMwLTY2IDIzLTEwMCA3MC0xMDB6bTkgMjRjLTQwIDAtNDYgMzQtNDYgNzUgMCA0MCA2IDc0IDQ1%0D%0AIDc0IDQyIDAgNTEtMzIgNTEtNzYgMC00Mi05LTc0LTUwLTczIiBpZD0ibiIvPjxwYXRoIGQ9Ik0y%0D%0AMTAtMTY5Yy02NyAzLTM4IDEwNS00NCAxNjloLTMxdi0xMjFjMC0yOS01LTUwLTM1LTQ4QzM0LTE2%0D%0ANSA2Mi02NSA1NiAwSDI1bC0xLTE5MGgzMGMxIDEwLTEgMjQgMiAzMiAxMC00NCA5OS01MCAxMDcg%0D%0AMCAxMS0yMSAyNy0zNSA1OC0zNiA4NS0yIDQ3IDExOSA1NSAxOTRoLTMxdi0xMjFjMC0yOS01LTQ5%0D%0ALTM1LTQ4IiBpZD0ibyIvPjxwYXRoIGQ9Ik0yNC0yMzF2LTMwaDMydjMwSDI0ek0yNCAwdi0xOTBo%0D%0AMzJWMEgyNCIgaWQ9InAiLz48cGF0aCBkPSJNMTE3LTE5NGM4OS00IDUzIDExNiA2MCAxOTRoLTMy%0D%0Adi0xMjFjMC0zMS04LTQ5LTM5LTQ4QzM0LTE2NyA2Mi02NyA1NyAwSDI1bC0xLTE5MGgzMGMxIDEw%0D%0ALTEgMjQgMiAzMiAxMS0yMiAyOS0zNSA2MS0zNiIgaWQ9InEiLz48ZyBpZD0iYSI+PHVzZSB0cmFu%0D%0Ac2Zvcm09Im1hdHJpeCgwLjA1LDAsMCwwLjA1LDAsMCkiIHhsaW5rOmhyZWY9IiNtIi8+PHVzZSB0%0D%0AcmFuc2Zvcm09Im1hdHJpeCgwLjA1LDAsMCwwLjA1LDEyLDApIiB4bGluazpocmVmPSIjbiIvPjx1%0D%0Ac2UgdHJhbnNmb3JtPSJtYXRyaXgoMC4wNSwwLDAsMC4wNSwyMiwwKSIgeGxpbms6aHJlZj0iI28i%0D%0ALz48dXNlIHRyYW5zZm9ybT0ibWF0cml4KDAuMDUsMCwwLDAuMDUsMzYuOTUsMCkiIHhsaW5rOmhy%0D%0AZWY9IiNwIi8+PHVzZSB0cmFuc2Zvcm09Im1hdHJpeCgwLjA1LDAsMCwwLjA1LDQwLjkwMDAwMDAw%0D%0AMDAwMDAwNiwwKSIgeGxpbms6aHJlZj0iI3EiLz48L2c+PHBhdGggZD0iTTMwLTI0OGMxMTgtNyAy%0D%0AMTYgOCAyMTMgMTIyQzI0MC00OCAyMDAgMCAxMjIgMEgzMHYtMjQ4ek02My0yN2M4OSA4IDE0Ni0x%0D%0ANiAxNDYtOTlzLTYwLTEwMS0xNDYtOTV2MTk0IiBpZD0iciIvPjxwYXRoIGQ9Ik0xMTQtMTYzQzM2%0D%0ALTE3OSA2MS03MiA1NyAwSDI1bC0xLTE5MGgzMGMxIDEyLTEgMjkgMiAzOSA2LTI3IDIzLTQ5IDU4%0D%0ALTQxdjI5IiBpZD0icyIvPjxwYXRoIGQ9Ik0xMDggMEg3MEwxLTE5MGgzNEw4OS0yNWw1Ni0xNjVo%0D%0AMzQiIGlkPSJ0Ii8+PHBhdGggZD0iTTEwMC0xOTRjNjMgMCA4NiA0MiA4NCAxMDZINDljMCA0MCAx%0D%0ANCA2NyA1MyA2OCAyNiAxIDQzLTEyIDQ5LTI5bDI4IDhjLTExIDI4LTM3IDQ1LTc3IDQ1QzQ0IDQg%0D%0AMTQtMzMgMTUtOTZjMS02MSAyNi05OCA4NS05OHptNTIgODFjNi02MC03Ni03Ny05Ny0yOC0zIDct%0D%0ANiAxNy02IDI4aDEwMyIgaWQ9InUiLz48ZyBpZD0iYiI+PHVzZSB0cmFuc2Zvcm09Im1hdHJpeCgw%0D%0ALjA1LDAsMCwwLjA1LDAsMCkiIHhsaW5rOmhyZWY9IiNyIi8+PHVzZSB0cmFuc2Zvcm09Im1hdHJp%0D%0AeCgwLjA1LDAsMCwwLjA1LDEyLjk1MDAwMDAwMDAwMDAwMSwwKSIgeGxpbms6aHJlZj0iI3MiLz48%0D%0AdXNlIHRyYW5zZm9ybT0ibWF0cml4KDAuMDUsMCwwLDAuMDUsMTguOTAwMDAwMDAwMDAwMDAyLDAp%0D%0AIiB4bGluazpocmVmPSIjcCIvPjx1c2UgdHJhbnNmb3JtPSJtYXRyaXgoMC4wNSwwLDAsMC4wNSwy%0D%0AMi44NSwwKSIgeGxpbms6aHJlZj0iI3QiLz48dXNlIHRyYW5zZm9ybT0ibWF0cml4KDAuMDUsMCww%0D%0ALDAuMDUsMzEuODUsMCkiIHhsaW5rOmhyZWY9IiN1Ii8+PHVzZSB0cmFuc2Zvcm09Im1hdHJpeCgw%0D%0ALjA1LDAsMCwwLjA1LDQxLjg1LDApIiB4bGluazpocmVmPSIjcyIvPjwvZz48cGF0aCBkPSJNMTgt%0D%0AMTAwdi0zNmwxNzUtNzR2MjdMNDItMTE4bDE1MSA2NHYyNyIgaWQ9InYiLz48cGF0aCBkPSJNMTE1%0D%0ALTE5NGM1NSAxIDcwIDQxIDcwIDk4UzE2OSAyIDExNSA0Qzg0IDQgNjYtOSA1NS0zMGwxIDEwNUgy%0D%0ANGwtMS0yNjVoMzFsMiAzMGMxMC0yMSAyOC0zNCA1OS0zNHptLTggMTc0YzQwIDAgNDUtMzQgNDUt%0D%0ANzVzLTYtNzMtNDUtNzRjLTQyIDAtNTEgMzItNTEgNzYgMCA0MyAxMCA3MyA1MSA3MyIgaWQ9Inci%0D%0ALz48cGF0aCBkPSJNOTYtMTY5Yy00MCAwLTQ4IDMzLTQ4IDczczkgNzUgNDggNzVjMjQgMCA0MS0x%0D%0ANCA0My0zOGwzMiAyYy02IDM3LTMxIDYxLTc0IDYxLTU5IDAtNzYtNDEtODItOTktMTAtOTMgMTAx%0D%0ALTEzMSAxNDctNjQgNCA3IDUgMTQgNyAyMmwtMzIgM2MtNC0yMS0xNi0zNS00MS0zNSIgaWQ9Ingi%0D%0ALz48cGF0aCBkPSJNMTM1LTE0M2MtMy0zNC04Ni0zOC04NyAwIDE1IDUzIDExNSAxMiAxMTkgOTBT%0D%0AMTcgMjEgMTAtNDVsMjgtNWM0IDM2IDk3IDQ1IDk4IDAtMTAtNTYtMTEzLTE1LTExOC05MC00LTU3%0D%0AIDgyLTYzIDEyMi00MiAxMiA3IDIxIDE5IDI0IDM1IiBpZD0ieSIvPjxwYXRoIGQ9Ik0xOC0yN3Yt%0D%0AMjdsMTUxLTY0LTE1MS02NXYtMjdsMTc1IDc0djM2IiBpZD0ieiIvPjxnIGlkPSJjIj48dXNlIHRy%0D%0AYW5zZm9ybT0ibWF0cml4KDAuMDUsMCwwLDAuMDUsMCwwKSIgeGxpbms6aHJlZj0iI3YiLz48dXNl%0D%0AIHRyYW5zZm9ybT0ibWF0cml4KDAuMDUsMCwwLDAuMDUsMTAuNSwwKSIgeGxpbms6aHJlZj0iI3Yi%0D%0ALz48dXNlIHRyYW5zZm9ybT0ibWF0cml4KDAuMDUsMCwwLDAuMDUsMjEsMCkiIHhsaW5rOmhyZWY9%0D%0AIiN3Ii8+PHVzZSB0cmFuc2Zvcm09Im1hdHJpeCgwLjA1LDAsMCwwLjA1LDMxLDApIiB4bGluazpo%0D%0AcmVmPSIjcyIvPjx1c2UgdHJhbnNmb3JtPSJtYXRyaXgoMC4wNSwwLDAsMC4wNSwzNi45NSwwKSIg%0D%0AeGxpbms6aHJlZj0iI3UiLz48dXNlIHRyYW5zZm9ybT0ibWF0cml4KDAuMDUsMCwwLDAuMDUsNDYu%0D%0AOTUsMCkiIHhsaW5rOmhyZWY9IiN4Ii8+PHVzZSB0cmFuc2Zvcm09Im1hdHJpeCgwLjA1LDAsMCww%0D%0ALjA1LDU1Ljk1LDApIiB4bGluazpocmVmPSIjdSIvPjx1c2UgdHJhbnNmb3JtPSJtYXRyaXgoMC4w%0D%0ANSwwLDAsMC4wNSw2NS45NSwwKSIgeGxpbms6aHJlZj0iI3UiLz48dXNlIHRyYW5zZm9ybT0ibWF0%0D%0Acml4KDAuMDUsMCwwLDAuMDUsNzUuOTUsMCkiIHhsaW5rOmhyZWY9IiNuIi8+PHVzZSB0cmFuc2Zv%0D%0Acm09Im1hdHJpeCgwLjA1LDAsMCwwLjA1LDg1Ljk1LDApIiB4bGluazpocmVmPSIjeSIvPjx1c2Ug%0D%0AdHJhbnNmb3JtPSJtYXRyaXgoMC4wNSwwLDAsMC4wNSw5NC45NSwwKSIgeGxpbms6aHJlZj0iI3oi%0D%0ALz48dXNlIHRyYW5zZm9ybT0ibWF0cml4KDAuMDUsMCwwLDAuMDUsMTA1LjQ1LDApIiB4bGluazpo%0D%0AcmVmPSIjeiIvPjwvZz48cGF0aCBkPSJNMjMzLTE3N2MtMSA0MS0yMyA2NC02MCA3MEwyNDMgMGgt%0D%0AMzhsLTY1LTEwM0g2M1YwSDMwdi0yNDhjODggMyAyMDUtMjEgMjAzIDcxek02My0xMjljNjAtMiAx%0D%0AMzcgMTMgMTM3LTQ3IDAtNjEtODAtNDItMTM3LTQ1djkyIiBpZD0iQSIvPjxwYXRoIGQ9Ik04NCA0%0D%0AQy01IDggMzAtMTEyIDIzLTE5MGgzMnYxMjBjMCAzMSA3IDUwIDM5IDQ5IDcyLTIgNDUtMTAxIDUw%0D%0ALTE2OWgzMWwxIDE5MGgtMzBjLTEtMTAgMS0yNS0yLTMzLTExIDIyLTI4IDM2LTYwIDM3IiBpZD0i%0D%0AQiIvPjxwYXRoIGQ9Ik0yNCAwdi0yNjFoMzJWMEgyNCIgaWQ9IkMiLz48cGF0aCBkPSJNNTktNDdj%0D%0ALTIgMjQgMTggMjkgMzggMjJ2MjRDNjQgOSAyNyA0IDI3LTQwdi0xMjdINXYtMjNoMjRsOS00M2gy%0D%0AMXY0M2gzNXYyM0g1OXYxMjAiIGlkPSJEIi8+PGcgaWQ9ImQiPjx1c2UgdHJhbnNmb3JtPSJtYXRy%0D%0AaXgoMC4wNSwwLDAsMC4wNSwwLDApIiB4bGluazpocmVmPSIjQSIvPjx1c2UgdHJhbnNmb3JtPSJt%0D%0AYXRyaXgoMC4wNSwwLDAsMC4wNSwxMi45NTAwMDAwMDAwMDAwMDEsMCkiIHhsaW5rOmhyZWY9IiN1%0D%0AIi8+PHVzZSB0cmFuc2Zvcm09Im1hdHJpeCgwLjA1LDAsMCwwLjA1LDIyLjk1MDAwMDAwMDAwMDAw%0D%0AMywwKSIgeGxpbms6aHJlZj0iI3kiLz48dXNlIHRyYW5zZm9ybT0ibWF0cml4KDAuMDUsMCwwLDAu%0D%0AMDUsMzEuOTUwMDAwMDAwMDAwMDAzLDApIiB4bGluazpocmVmPSIjQiIvPjx1c2UgdHJhbnNmb3Jt%0D%0APSJtYXRyaXgoMC4wNSwwLDAsMC4wNSw0MS45NSwwKSIgeGxpbms6aHJlZj0iI0MiLz48dXNlIHRy%0D%0AYW5zZm9ybT0ibWF0cml4KDAuMDUsMCwwLDAuMDUsNDUuOTAwMDAwMDAwMDAwMDA2LDApIiB4bGlu%0D%0AazpocmVmPSIjRCIvPjx1c2UgdHJhbnNmb3JtPSJtYXRyaXgoMC4wNSwwLDAsMC4wNSw1MC45MDAw%0D%0AMDAwMDAwMDAwMDYsMCkiIHhsaW5rOmhyZWY9IiN5Ii8+PC9nPjxwYXRoIGQ9Ik02My0yMjB2OTJo%0D%0AMTM4djI4SDYzVjBIMzB2LTI0OGgxNzV2MjhINjMiIGlkPSJFIi8+PGcgaWQ9ImUiPjx1c2UgdHJh%0D%0AbnNmb3JtPSJtYXRyaXgoMC4wNSwwLDAsMC4wNSwwLDApIiB4bGluazpocmVmPSIjRSIvPjx1c2Ug%0D%0AdHJhbnNmb3JtPSJtYXRyaXgoMC4wNSwwLDAsMC4wNSwxMC45NTAwMDAwMDAwMDAwMDEsMCkiIHhs%0D%0AaW5rOmhyZWY9IiNwIi8+PHVzZSB0cmFuc2Zvcm09Im1hdHJpeCgwLjA1LDAsMCwwLjA1LDE0Ljks%0D%0AMCkiIHhsaW5rOmhyZWY9IiNDIi8+PHVzZSB0cmFuc2Zvcm09Im1hdHJpeCgwLjA1LDAsMCwwLjA1%0D%0ALDE4Ljg1LDApIiB4bGluazpocmVmPSIjQyIvPjwvZz48cGF0aCBkPSJNMTQwLTI1MWM4MSAwIDEy%0D%0AMyA0NiAxMjMgMTI2QzI2My00NiAyMTkgNCAxNDAgNCA1OSA0IDE3LTQ1IDE3LTEyNXM0Mi0xMjYg%0D%0AMTIzLTEyNnptMCAyMjdjNjMgMCA4OS00MSA4OS0xMDFzLTI5LTk5LTg5LTk5Yy02MSAwLTg5IDM5%0D%0ALTg5IDk5Uzc5LTI1IDE0MC0yNCIgaWQ9IkYiLz48ZyBpZD0iZiI+PHVzZSB0cmFuc2Zvcm09Im1h%0D%0AdHJpeCgwLjA1LDAsMCwwLjA1LDAsMCkiIHhsaW5rOmhyZWY9IiNGIi8+PHVzZSB0cmFuc2Zvcm09%0D%0AIm1hdHJpeCgwLjA1LDAsMCwwLjA1LDE0LDApIiB4bGluazpocmVmPSIjQiIvPjx1c2UgdHJhbnNm%0D%0Ab3JtPSJtYXRyaXgoMC4wNSwwLDAsMC4wNSwyNCwwKSIgeGxpbms6aHJlZj0iI0QiLz48L2c+PHBh%0D%0AdGggZD0iTTEwMC0xOTRjNjItMSA4NSAzNyA4NSA5OSAxIDYzLTI3IDk5LTg2IDk5UzE2LTM1IDE1%0D%0ALTk1YzAtNjYgMjgtOTkgODUtOTl6TTk5LTIwYzQ0IDEgNTMtMzEgNTMtNzUgMC00My04LTc1LTUx%0D%0ALTc1cy01MyAzMi01MyA3NSAxMCA3NCA1MSA3NSIgaWQ9IkciLz48ZyBpZD0iZyI+PHVzZSB0cmFu%0D%0Ac2Zvcm09Im1hdHJpeCgwLjA1LDAsMCwwLjA1LDAsMCkiIHhsaW5rOmhyZWY9IiNFIi8+PHVzZSB0%0D%0AcmFuc2Zvcm09Im1hdHJpeCgwLjA1LDAsMCwwLjA1LDEwLjk1MDAwMDAwMDAwMDAwMSwwKSIgeGxp%0D%0Abms6aHJlZj0iI0ciLz48dXNlIHRyYW5zZm9ybT0ibWF0cml4KDAuMDUsMCwwLDAuMDUsMjAuOTUw%0D%0AMDAwMDAwMDAwMDAzLDApIiB4bGluazpocmVmPSIjcyIvPjx1c2UgdHJhbnNmb3JtPSJtYXRyaXgo%0D%0AMC4wNSwwLDAsMC4wNSwyNi45MDAwMDAwMDAwMDAwMDIsMCkiIHhsaW5rOmhyZWY9IiNvIi8+PC9n%0D%0APjxwYXRoIGQ9Ik0yMTItMTc5Yy0xMC0yOC0zNS00NS03My00NS01OSAwLTg3IDQwLTg3IDk5IDAg%0D%0ANjAgMjkgMTAxIDg5IDEwMSA0MyAwIDYyLTI0IDc4LTUybDI3IDE0QzIyOC0yNCAxOTUgNCAxMzkg%0D%0ANCA1OSA0IDIyLTQ2IDE4LTEyNWMtNi0xMDQgOTktMTUzIDE4Ny0xMTEgMTkgOSAzMSAyNiAzOSA0%0D%0ANiIgaWQ9IkgiLz48cGF0aCBkPSJNMTQxLTM2QzEyNi0xNSAxMTAgNSA3MyA0IDM3IDMgMTUtMTcg%0D%0AMTUtNTNjLTEtNjQgNjMtNjMgMTI1LTYzIDMtMzUtOS01NC00MS01NC0yNCAxLTQxIDctNDIgMzFs%0D%0ALTMzLTNjNS0zNyAzMy01MiA3Ni01MiA0NSAwIDcyIDIwIDcyIDY0djgyYy0xIDIwIDcgMzIgMjgg%0D%0AMjd2MjBjLTMxIDktNjEtMi01OS0zNXpNNDgtNTNjMCAyMCAxMiAzMyAzMiAzMyA0MS0zIDYzLTI5%0D%0AIDYwLTc0LTQzIDItOTItNS05MiA0MSIgaWQ9IkkiLz48ZyBpZD0iaCI+PHVzZSB0cmFuc2Zvcm09%0D%0AIm1hdHJpeCgwLjA1LDAsMCwwLjA1LDAsMCkiIHhsaW5rOmhyZWY9IiNIIi8+PHVzZSB0cmFuc2Zv%0D%0Acm09Im1hdHJpeCgwLjA1LDAsMCwwLjA1LDEyLjk1MDAwMDAwMDAwMDAwMSwwKSIgeGxpbms6aHJl%0D%0AZj0iI3MiLz48dXNlIHRyYW5zZm9ybT0ibWF0cml4KDAuMDUsMCwwLDAuMDUsMTguOTAwMDAwMDAw%0D%0AMDAwMDAyLDApIiB4bGluazpocmVmPSIjdSIvPjx1c2UgdHJhbnNmb3JtPSJtYXRyaXgoMC4wNSww%0D%0ALDAsMC4wNSwyOC45MDAwMDAwMDAwMDAwMDIsMCkiIHhsaW5rOmhyZWY9IiNJIi8+PHVzZSB0cmFu%0D%0Ac2Zvcm09Im1hdHJpeCgwLjA1LDAsMCwwLjA1LDM4LjkwMDAwMDAwMDAwMDAwNiwwKSIgeGxpbms6%0D%0AaHJlZj0iI0QiLz48dXNlIHRyYW5zZm9ybT0ibWF0cml4KDAuMDUsMCwwLDAuMDUsNDMuOTAwMDAw%0D%0AMDAwMDAwMDA2LDApIiB4bGluazpocmVmPSIjdSIvPjwvZz48ZyBpZD0iaSI+PHVzZSB0cmFuc2Zv%0D%0Acm09Im1hdHJpeCgwLjA1LDAsMCwwLjA1LDAsMCkiIHhsaW5rOmhyZWY9IiNFIi8+PHVzZSB0cmFu%0D%0Ac2Zvcm09Im1hdHJpeCgwLjA1LDAsMCwwLjA1LDEwLjk1MDAwMDAwMDAwMDAwMSwwKSIgeGxpbms6%0D%0AaHJlZj0iI0ciLz48dXNlIHRyYW5zZm9ybT0ibWF0cml4KDAuMDUsMCwwLDAuMDUsMjAuOTUwMDAw%0D%0AMDAwMDAwMDAzLDApIiB4bGluazpocmVmPSIjcyIvPjx1c2UgdHJhbnNmb3JtPSJtYXRyaXgoMC4w%0D%0ANSwwLDAsMC4wNSwyNi45MDAwMDAwMDAwMDAwMDIsMCkiIHhsaW5rOmhyZWY9IiNvIi8+PC9nPjxn%0D%0AIGlkPSJqIj48dXNlIHRyYW5zZm9ybT0ibWF0cml4KDAuMDUsMCwwLDAuMDUsMCwwKSIgeGxpbms6%0D%0AaHJlZj0iI20iLz48dXNlIHRyYW5zZm9ybT0ibWF0cml4KDAuMDUsMCwwLDAuMDUsMTIsMCkiIHhs%0D%0AaW5rOmhyZWY9IiN4Ii8+PHVzZSB0cmFuc2Zvcm09Im1hdHJpeCgwLjA1LDAsMCwwLjA1LDIxLDAp%0D%0AIiB4bGluazpocmVmPSIjeCIvPjx1c2UgdHJhbnNmb3JtPSJtYXRyaXgoMC4wNSwwLDAsMC4wNSwz%0D%0AMCwwKSIgeGxpbms6aHJlZj0iI0ciLz48dXNlIHRyYW5zZm9ybT0ibWF0cml4KDAuMDUsMCwwLDAu%0D%0AMDUsNDAsMCkiIHhsaW5rOmhyZWY9IiNCIi8+PHVzZSB0cmFuc2Zvcm09Im1hdHJpeCgwLjA1LDAs%0D%0AMCwwLjA1LDUwLDApIiB4bGluazpocmVmPSIjcSIvPjx1c2UgdHJhbnNmb3JtPSJtYXRyaXgoMC4w%0D%0ANSwwLDAsMC4wNSw2MCwwKSIgeGxpbms6aHJlZj0iI0QiLz48L2c+PHBhdGggZD0iTTMwIDB2LTI0%0D%0AOGgzM3YyMjFoMTI1VjBIMzAiIGlkPSJKIi8+PHBhdGggZD0iTTE3Ny0xOTBDMTY3LTY1IDIxOCAx%0D%0AMDMgNjcgNzFjLTIzLTYtMzgtMjAtNDQtNDNsMzItNWMxNSA0NyAxMDAgMzIgODktMjh2LTMwQzEz%0D%0AMy0xNCAxMTUgMSA4MyAxIDI5IDEgMTUtNDAgMTUtOTVjMC01NiAxNi05NyA3MS05OCAyOS0xIDQ4%0D%0AIDE2IDU5IDM1IDEtMTAgMC0yMyAyLTMyaDMwek05NC0yMmMzNiAwIDUwLTMyIDUwLTczIDAtNDIt%0D%0AMTQtNzUtNTAtNzUtMzkgMC00NiAzNC00NiA3NXM2IDczIDQ2IDczIiBpZD0iSyIvPjxnIGlkPSJr%0D%0AIj48dXNlIHRyYW5zZm9ybT0ibWF0cml4KDAuMDUsMCwwLDAuMDUsMCwwKSIgeGxpbms6aHJlZj0i%0D%0AI0oiLz48dXNlIHRyYW5zZm9ybT0ibWF0cml4KDAuMDUsMCwwLDAuMDUsMTAsMCkiIHhsaW5rOmhy%0D%0AZWY9IiNHIi8+PHVzZSB0cmFuc2Zvcm09Im1hdHJpeCgwLjA1LDAsMCwwLjA1LDIwLDApIiB4bGlu%0D%0AazpocmVmPSIjSyIvPjx1c2UgdHJhbnNmb3JtPSJtYXRyaXgoMC4wNSwwLDAsMC4wNSwzMCwwKSIg%0D%0AeGxpbms6aHJlZj0iI3AiLz48dXNlIHRyYW5zZm9ybT0ibWF0cml4KDAuMDUsMCwwLDAuMDUsMzMu%0D%0AOTUsMCkiIHhsaW5rOmhyZWY9IiNxIi8+PC9nPjxnIGlkPSJsIj48dXNlIHRyYW5zZm9ybT0ibWF0%0D%0Acml4KDAuMDUsMCwwLDAuMDUsMCwwKSIgeGxpbms6aHJlZj0iI3YiLz48dXNlIHRyYW5zZm9ybT0i%0D%0AbWF0cml4KDAuMDUsMCwwLDAuMDUsMTAuNSwwKSIgeGxpbms6aHJlZj0iI3YiLz48dXNlIHRyYW5z%0D%0AZm9ybT0ibWF0cml4KDAuMDUsMCwwLDAuMDUsMjEsMCkiIHhsaW5rOmhyZWY9IiN3Ii8+PHVzZSB0%0D%0AcmFuc2Zvcm09Im1hdHJpeCgwLjA1LDAsMCwwLjA1LDMxLDApIiB4bGluazpocmVmPSIjcyIvPjx1%0D%0Ac2UgdHJhbnNmb3JtPSJtYXRyaXgoMC4wNSwwLDAsMC4wNSwzNi45NSwwKSIgeGxpbms6aHJlZj0i%0D%0AI3UiLz48dXNlIHRyYW5zZm9ybT0ibWF0cml4KDAuMDUsMCwwLDAuMDUsNDYuOTUsMCkiIHhsaW5r%0D%0AOmhyZWY9IiN4Ii8+PHVzZSB0cmFuc2Zvcm09Im1hdHJpeCgwLjA1LDAsMCwwLjA1LDU1Ljk1LDAp%0D%0AIiB4bGluazpocmVmPSIjdSIvPjx1c2UgdHJhbnNmb3JtPSJtYXRyaXgoMC4wNSwwLDAsMC4wNSw2%0D%0ANS45NSwwKSIgeGxpbms6aHJlZj0iI3UiLz48dXNlIHRyYW5zZm9ybT0ibWF0cml4KDAuMDUsMCww%0D%0ALDAuMDUsNzUuOTUsMCkiIHhsaW5rOmhyZWY9IiNuIi8+PHVzZSB0cmFuc2Zvcm09Im1hdHJpeCgw%0D%0ALjA1LDAsMCwwLjA1LDg1Ljk1LDApIiB4bGluazpocmVmPSIjeSIvPjx1c2UgdHJhbnNmb3JtPSJt%0D%0AYXRyaXgoMC4wNSwwLDAsMC4wNSw5NC45NSwwKSIgeGxpbms6aHJlZj0iI3oiLz48dXNlIHRyYW5z%0D%0AZm9ybT0ibWF0cml4KDAuMDUsMCwwLDAuMDUsMTA1LjQ1LDApIiB4bGluazpocmVmPSIjeiIvPjwv%0D%0AZz48L2RlZnM+PC9nPjwvc3ZnPg=="
+                 alt="Result" height="500px" width="500px">
+        </div>
+    </div>
+
+    <div class="row" id="DomainmodelUseCase" style="margin: 30px;">
+        <div class="column" style="width: 100%;">
+            <h3>Domain Model</h3>
+            <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/CDL-Prescreener/images/DomainModel.jpg"
+                 alt="Domain Model" height="500px" width="500px">
+        </div>
+    </div>
+
+    <div class="row" id="HighLevelReqUseCase" style="margin: 30px; text-align: left">
+        <div class="column" style="width: 100%;">
+            <h3 style="text-align: center">High Level Requirements</h3>
+            <ol>
+                <li>The system shall allow the Admin the ability to create forms.</li>
+                <li>The system shall allow the Admin the ability to edit forms.</li>
+                <li>The system shall allow the Admin and Driver to create accounts.</li>
+                <li>The system shall allow the Driver to fill out the CDL Questionnaire.</li>
+                <li>The system shall allow the Driver to print off their forms after filling out the CDL Questionnaire.</li>
+                <li>The system shall allow the Admin to query the database containing the Driver Account Information.</li>
+                <li>The system shall allow the Admin to back up the database containing the Driver Account Information.</li>
+                <li>The system shall allow the Driver to keep up with current CDL Licensing news.</li>
+                <li>The system shall allow the Driver to save their CDL Questionnaire and resume it later.</li>
+                <li>The system shall provide the Driver with information regarding any CDL Licensing restrictions that may apply, based off of their CDL Questionnaire responses.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row" id="ProjGlossUseCase" style="margin: 30px; text-align: left">
+        <div class="column" style="width: 100%;">
+            <h3 style="text-align: center">Project Glossary</h3>
+            <ol>
+                <li>Driver: The truck drivers who will be filling out the CDL Prescreener questionnaire.</li>
+                <li>Admin: The users who will be developing/monitoring the application.</li>
+                <li>Database: Stores the data used by the application.</li>
+                <li>Driver Account: Contains all the Protected Health Information (PHI), age, and driver’s city that is entered in the application. Will NOT have any Personally Identifiable Information (eg. Name, Full Address, SSN, Date of Birth, phone number, etc).</li>
+                <li>Driver Account Information: Contains all of Driver’s PHI (from the questionnaire), age and city.</li>
+                <li>Protected Health Information (PHI): is any information about health status, provision of health care, or payment for health care that is created or collected by a Covered Entity (or a Business Associate of a Covered Entity), and can be linked to a specific individual.</li>
+                <li>Admin Account: Allows Admin to access protected areas of the application.</li>
+                <li>Form Builder: A GUI that Admins can use to build the questionnaire.</li>
+                <li>CDL Questionnaire: The form that the Driver will be filling out with their health information.</li>
+                <li>CDL Forms: The forms that might need to be printed out by the Driver at the end of the questionnaire process.</li>
+                <li>Medical Examination Report Form: The form that will be populated with the Driver’s answers from the questionnaire, that will be printed out by the Driver.</li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section id="phase2" style="text-align: center;">
+    <h2><a name="p2"></a>Phase 2</h2>
+    <div id="ClassDiagram" style="margin: 30px;">
+        <h3>Class Diagram</h3>
+        <div class="row">
+            <div class="column" style="float: left; width: 25%;">
+                <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/CDL-Prescreener/images/CACD.jpg"
+                     id="CACD" alt="Create Account" class="modal-content" height="200px" width="375px">
+                <div id="CACDM" class="modal">
+                    <img class="modal-content" id="CACDmodal">
+                </div>
+
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById('CACDM');
+                    var img = document.getElementById('CACD');
+                    var modalImg = document.getElementById("CACDmodal");
+                    img.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                    }
+
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+            </div>
+            <div class="column" style="float: left; width: 25%;">
+                <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/CDL-Prescreener/images/CFCD.jpg"
+                     id="CFCD" alt="Create Form" class="modal-content" height="400px" width="300px">
+                <div id="CFCDM" class="modal">
+                    <img class="modal-content" id="CFCDmodal">
+                </div>
+
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById('CFCDM');
+                    var img = document.getElementById('CFCD');
+                    var modalImg = document.getElementById("CFCDmodal");
+                    img.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                    }
+
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+            </div>
+            <div class="column" style="float: left; width: 25%;">
+                <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/phases/Phase2/FillOutFormClassDiagram.jpg"
+                     id="FOFCD" alt="Fill Out Form" class="modal-content" height="400px" width="300px">
+                <div id="FOFCDM" class="modal">
+                    <img class="modal-content" id="FOFCDmodal">
+                </div>
+
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById('FOFCD');
+                    var img = document.getElementById('FOFCD');
+                    var modalImg = document.getElementById("FOFCDmodal");
+                    img.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                    }
+
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+            </div>
+            <div class="column" style="float: right; width: 25%;">
+                <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/CDL-Prescreener/images/RCD.jpg"
+                     id="RCD" alt="Result" class="modal-content" height="300px" width="300px">
+                <div id="RCDM" class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="RCDmodal">
+                </div>
+
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById('RCDM');
+                    var img = document.getElementById('RCD');
+                    var modalImg = document.getElementById("RCDmodal");
+                    img.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                    }
+
+                    var span = document.getElementsByClassName("close")[0];
+
+                    span.onclick = function() {
+                        modal.style.display = "none";
+                    }
+                </script>
+            </div>
+        </div>
+        <p>&nbsp;</p>
+    </div>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <div id="RobustDiagram" style="margin: 30px; clear: both;">
+        <h3>Robust Diagram</h3>
+        <div class="row">
+            <div class="column" style="float: left; width: 25%;">
+                <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/CDL-Prescreener/images/CARD.jpg"
+                     id="CARD" alt="Create Account" class="modal-content" height="200px" width="375px">
+                <div id="CARDM" class="modal">
+                    <img class="modal-content" id="CARDmodal">
+                </div>
+
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById('CACRM');
+                    var img = document.getElementById('CARD');
+                    var modalImg = document.getElementById("CARDmodal");
+                    img.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                    }
+
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+            </div>
+            <div class="column" style="float: left; width: 25%;">
+                <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/CDL-Prescreener/images/CFRD.jpg"
+                     id="CFRD" alt="Create Form" class="modal-content" height="400px" width="300px">
+                <div id="CFRDM" class="modal">
+                    <img class="modal-content" id="CFRDmodal">
+                </div>
+
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById('CFRDM');
+                    var img = document.getElementById('CFRD');
+                    var modalImg = document.getElementById("CFRDmodal");
+                    img.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                    }
+
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+            </div>
+            <div class="column" style="float: left; width: 25%;">
+                <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/CDL-Prescreener/images/FOFRD.jpg"
+                     id="FOFRD" alt="Fill Out Form" class="modal-content" height="400px" width="300px">
+                <div id="FOFRDM" class="modal">
+                    <img class="modal-content" id="FOFRDmodal">
+                </div>
+
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById('FOFRDM');
+                    var img = document.getElementById('FOFRD');
+                    var modalImg = document.getElementById("FOFRDmodal");
+                    img.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                    }
+
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+            </div>
+            <div class="column" style="float: right; width: 25%;">
+                <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/CDL-Prescreener/images/RRD.jpg"
+                     id="RRD" alt="Result" class="modal-content" height="300px" width="300px">
+                <div id="RRDM" class="modal">
+                    <img class="modal-content" id="RRDmodal">
+                </div>
+
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById('RRDM');
+                    var img = document.getElementById('RRD');
+                    var modalImg = document.getElementById("RRDmodal");
+                    img.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                    }
+
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+        <p>&nbsp;</p>
+    </div>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <div id="SequenceDiagram" style="margin: 30px; clear: both;">
+        <h3>Sequence Diagram</h3>
+        <div class="row">
+            <div class="column" style="float: left; width: 25%;">
+                <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/CDL-Prescreener/images/CASD.jpg"
+                     id="CASD" alt="Create Account" class="modal-content" height="200px" width="375px">
+                <div id="CASDM" class="modal">
+                    <img class="modal-content" id="CASDmodal">
+                </div>
+
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById('CASRM');
+                    var img = document.getElementById('CASD');
+                    var modalImg = document.getElementById("CASDmodal");
+                    img.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                    }
+
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+            </div>
+            <div class="column" style="float: left; width: 25%;">
+                <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/CDL-Prescreener/images/CFSD.jpg"
+                     id="CFSD" alt="Create Form" class="modal-content" height="400px" width="300px">
+                <div id="CFSDM" class="modal">
+                    <img class="modal-content" id="CFSDmodal">
+                </div>
+
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById('CFSDM');
+                    var img = document.getElementById('CFSD');
+                    var modalImg = document.getElementById("CFSDmodal");
+                    img.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                    }
+
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+            </div>
+            <div class="column" style="float: left; width: 25%;">
+                <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/CDL-Prescreener/images/FOFSD.jpg"
+                     id="FOFSD" alt="Fill Out Form" class="modal-content" height="400px" width="300px">
+                <div id="FOFSDM" class="modal">
+                    <img class="modal-content" id="FOFSDmodal">
+                </div>
+
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById('FOFSDM');
+                    var img = document.getElementById('FOFSD');
+                    var modalImg = document.getElementById("FOFSDmodal");
+                    img.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                    }
+
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+            </div>
+            <div class="column" style="float: right; width: 25%;">
+                <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/CDL-Prescreener/images/RSD.jpg"
+                     id="RSD" alt="Result" class="modal-content" height="300px" width="300px">
+                <div id="RSDM" class="modal">
+                    <img class="modal-content" id="RSDmodal">
+                </div>
+
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById('RSDM');
+                    var img = document.getElementById('RSD');
+                    var modalImg = document.getElementById("RSDmodal");
+                    img.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                    }
+
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+    <p>&nbsp;</p>
+</section>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<section id="phase3" style="text-align: center; clear: both;">
+    <h2><a name="p3"></a>Phase 3</h2>
+    <h3>Gnatt Chart</h3>
+    <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/CDL-Prescreener/images/GC.jpg">
+    <p>&nbsp;</p>
+    <h3>Software Process</h3>
+    <table border="1" style="width:100%; text-align: left;">
+        <tr style="text-align: center;">
+            <th>Month</th>
+            <th>Day</th>
+            <th>Development Plan</th>
+            <th>Test and Demonstration Plan</th>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Jan</td>
+            <td style="text-align: center;">30</td>
+            <td>
+                <ul>
+                    <li>(AG) Create customized HTML/CSS framework of Website</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>(AG) Show layout and click on pages</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Feb</td>
+            <td style="text-align: center;">6</td>
+            <td>
+                <ul>
+                    <li>(AG) Organize file structure to reduce repetitive updates (header, footer)</li>
+                    <li>(AG) Create php functions to help manage project</li>
+                    <li>(AG) Work on page layouts, styling</li>
+                    <li>(PP/JB) Plan the app</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>(AG) Show new project structure/look</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Feb</td>
+            <td style="text-align: center;">13</td>
+            <td>
+                <ul>
+                    <li>(AG) Create sql dump file)</li>
+                    <li>(AG) Set up database using PHP</li>
+                    <li>(LP) Work on Form Builder</li>
+                    <li>(PP) Work on front end for the app</li>
+                    <li>(JB) Start to build the DB for the app</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>(AG) Check to see if website loads, aka. if the server is connecting to the database</li>
+                    <li>(AG) Show SQL dump file on Github</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Feb</td>
+            <td style="text-align: center;">20</td>
+            <td>
+                <ul>
+                    <li>(AG) Improve database schema</li>
+                    <li>(AG) Create more php functions to help manage project</li>
+                    <li>(LP) Work on Form Builder</li>
+                    <li>(PP) Clean up the front end and move to the back end of the app</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>(AG) Show SQL dump file on Github</li>
+                    <li>(PP) Show app Progress</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Feb</td>
+            <td style="text-align: center;">27</td>
+            <td>
+                <ul>
+                    <li>(AG) Improve database schema</li>
+                    <li>(AG) Create secure database queries</li>
+                    <li>(LP) Work on Form Builder</li>
+                    <li>(PP) Code back end of the app</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>(AG) Show updated SQL dump file</li>
+                    <li>(AG) Try inserting expected input into queries</li>
+                    <li>(AG) Try inserting invalid input with html tags in it, etc</li>
+                    <li>(PP) Show app Progress</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Mar</td>
+            <td style="text-align: center;">10</td>
+            <td>
+                <ul>
+                    <li>(AG) Progress on user authentication and account creation</li>
+                    <li>(LP) Work on Form Builder</li>
+                    <li>(PP) Work on Questionnaire</li>
+                    <li>(JB) Progress on Database</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>(AG) Show progress on creating accounts, login</li>
+                    <li>(PP) Show progress on Questionnaire</li>
+                    <li>(JB) Show being able to retrieve information as test</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Mar</td>
+            <td style="text-align: center;">17</td>
+            <td>
+                <ul>
+                    <li>(AG) Provide user authentication and account creation</li>
+                    <li>(PP) Work on Questionnaire</li>
+                    <li>(JB) Work on backend of app</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>(AG) Show creation of user accounts and logging in</li>
+                    <li>(PP) Show progress on Questionnaire</li>
+                    <li>(JB) Show DB queries (if it's ready) or show app improvements in look</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Mar</td>
+            <td style="text-align: center;">24</td>
+            <td>
+                <ul>
+                    <li>(AG) Work on Results page queries</li>
+                    <li>(PP) Clean up app code and start putting on finishing touches</li>
+                    <li>(JB) Integrate database(PHP)</li>
+                    <li>(JB) Work on Form Builder</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>(AG) Show progress on Results page queries</li>
+                    <li>(JB) Show database working</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Apr</td>
+            <td style="text-align: center;">3</td>
+            <td>
+                <ul>
+                    <li>(AG) Build printable medical examination form</li>
+                    <li>(JB) Work on forms again</li>
+                    <li>(LP) Building medical examination form/questionnaire</li>
+                    <li>(PP) Clean up app code and start putting on finishing touches</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>(JB) Show more progress with forms</li>
+                    <li>(LP) Show progress on medical examination form</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Apr</td>
+            <td style="text-align: center;">10</td>
+            <td>
+                <ul>
+                    <li>(PP) Create About Us page</li>
+                    <li>(PP) Create Documentation page</li>
+                    <li>(JB) Complete forms</li>
+                    <li>(LP) Building medical examination form/questionnaire</li>
+                    <li>(AG) finish printable medical examination form</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Show social media links work, show what pages look like</li>
+                    <li>(JB) Show completed user forms</li>
+                    <li>(AG) show printable medical examination form</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Apr</td>
+            <td style="text-align: center;">17</td>
+            <td>
+                <ul>
+                    <li>(AG) Make queries to extract some demographic data from database</li>
+                    <li>(PP) Finish Documentation and About us page</li>
+                    <li>(JB) Finish app</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>(AG) Show queries</li>
+                    <li>(JB) Show finished application </li>
+                    <li>(PP) Show Documentation and About us page</li>
+                    <li>Show finished functionality of Questionnaire</li>
+                    <li>Show finished Android App</li>
+
+                </ul>
+            </td>
+        </tr>
+    </table>
+</section>
+</body>
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CDL Prescreener</title>
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 50%;
+            max-width: 900px;
+        }
+        .modal-content {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+        @-webkit-keyframes zoom {
+            from {-webkit-transform:scale(0)}
+            to {-webkit-transform:scale(1)}
+        }
+
+        @keyframes zoom {
+            from {transform:scale(0)}
+            to {transform:scale(1)}
+        }
+        .modal2 {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content2 {
+            margin: auto;
+            display: block;
+            width: 100%;
+            max-width: 1000px;
+        }
+        .modal-content2 {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+        .android {
+            width:15%;
+        }
+    </style>
+</head>
+<body>
+<header align="center">
+    <h2>Navigation</h2>
+    <ul>
+        <a href="./about_us.html" >About Us</a> <br>
+        <a href="./Documentation.html" >Documentation</a> <br>
+        <a href="./Test.html" >Test</a>
+    </ul>
+</header>
+
+<h1 align="center">Demonstrations</h1>
+<div align="center">
+    <h2>Website Application</h2>
+    <div id="homepage" align="center">
+        <h3>Homepage</h3>
+        <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/CDL-Prescreener/images/WebImages/homepage.jpg"
+             id="H" alt="Homepage" class="modal-content" height="500px" width="600px" >
+        <div id="HM" class="modal2">
+            <img class="modal-content2" id="Hmodal">
+        </div>
+
+        <script>
+            // Get the modal
+            var modal = document.getElementById('HM');
+            var img = document.getElementById('H');
+            var modalImg = document.getElementById("Hmodal");
+            img.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+        <p>The user can either click the button named take the medical form examination for now or click the CDL Medical Examination Form tab to go to the form.</p>
+    </div>
+    <p>&nbsp;</p>
+    <div id="CreateAccountWeb" align="center">
+        <h3>Create Account</h3>
+        <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/CDL-Prescreener/images/WebImages/CreateAcct.jpg"
+             id="CAW" alt="Create Account" class="modal-content" height="450px" width="10px" >
+        <div id="CAWM" class="modal">
+            <img class="modal-content" id="CAWmodal">
+        </div>
+
+        <script>
+            // Get the modal
+            var modal = document.getElementById('CAWM');
+            var img = document.getElementById('CAW');
+            var modalImg = document.getElementById("CAWmodal");
+            img.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+        <p>The user will be given a random username and must make a password that satisfies the 4 conditions shown.
+            The conditions will update as the user is typing their custom password and the conditions that must be met are
+            having a password that uses a upper and lower case character, a special character, a number, and must be at least 8 characters long.
+            If the user already has an account then they can just click the login button instead of making a new account.</p>
+    </div>
+    <p>&nbsp;</p>
+    <div id="MedicalExaminationForm" align="center">
+        <h3>Medical Examination Form Part 1</h3>
+        <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/CDL-Prescreener/images/WebImages/MedicalExaminationForm.jpg"
+             id="MEF" alt="Medical Examination Form Part 1" class="modal-content" height="450px" width="10px" >
+        <div id="MEFM" class="modal">
+            <img class="modal-content" id="MEFmodal">
+        </div>
+
+        <script>
+            // Get the modal
+            var modal = document.getElementById('MEFM');
+            var img = document.getElementById('MEF');
+            var modalImg = document.getElementById("MEFmodal");
+            img.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+        <p>This is the first section of our form and show the personal information that needs to be filled out.</p>
+    </div>
+    <p>&nbsp;</p>
+    <div id="MedicalExaminationForm2" align="center">
+        <h3>Medical Examination Form Part 2</h3>
+        <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/CDL-Prescreener/images/WebImages/MedicalExaminationForm2.jpg"
+             id="MEF2" alt="Medical Examination Form Part 2" class="modal-content" height="450px" width="100px" >
+        <div id="MEF2M" class="modal">
+            <img class="modal-content" id="MEF2modal">
+        </div>
+
+        <script>
+            // Get the modal
+            var modal = document.getElementById('MEF2M');
+            var img = document.getElementById('MEF2');
+            var modalImg = document.getElementById("MEF2modal");
+            img.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+        <p>The second section of our form asks the user to fill out their driver health history.</p>
+    </div>
+    <p>&nbsp;</p>
+    <div id="MedicalExaminationForm3" align="center">
+        <h3>Medical Examination Form Part 3</h3>
+        <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/CDL-Prescreener/images/WebImages/MedicalExaminationForm3.jpg"
+             id="MEF3" alt="Medical Examination Form Part 3" class="modal-content" height="450px" width="10px" >
+        <div id="MEF3M" class="modal">
+            <img class="modal-content" id="MEF3modal">
+        </div>
+
+        <script>
+            // Get the modal
+            var modal = document.getElementById('MEF3M');
+            var img = document.getElementById('MEF3');
+            var modalImg = document.getElementById("MEF3modal");
+            img.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+        <p>The last section of our form asks a lot of questions to see if the user has any of the specific condtitions.</p>
+    </div>
+    <p>&nbsp;</p>
+    <div id="Results" align="center">
+        <h3>Results Page</h3>
+        <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/CDL-Prescreener/images/WebImages/Results2.jpg"
+             id="R" alt="Results" class="modal-content" height="450px" width="10px" >
+        <div id="RM" class="modal">
+            <img class="modal-content" id="Rmodal">
+        </div>
+
+        <script>
+            // Get the modal
+            var modal = document.getElementById('RM');
+            var img = document.getElementById('R');
+            var modalImg = document.getElementById("Rmodal");
+            img.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+        <p>Displays how long the user's certification period is, along with there complete form as a pdf. Also shows any extra wavier forms that the user
+        may need to take to get filled out. Lastly this page shows notes that the user should know about if they want their CDL licence.</p>
+    </div>
+    <p>&nbsp;</p>
+    <div id="FormCreator" align="center">
+        <h3>Form Creator</h3>
+        <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/CDL-Prescreener/images/WebImages/FormCreator2.jpg"
+             id="FC" alt="Create Account" class="modal-content" height="450px" width="10px" >
+        <div id="FCM" class="modal">
+            <img class="modal-content" id="FCmodal">
+        </div>
+
+        <script>
+            // Get the modal
+            var modal = document.getElementById('FCM');
+            var img = document.getElementById('FC');
+            var modalImg = document.getElementById("FCmodal");
+            img.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+        <p>Idea of this page was to allow the user to scan any new forms to complete in and it will create a form that can be filled out. Unfortunately, due to
+        unforeseen issues we could not finish this. Now this is one of our future project goals.</p>
+    </div>
+</div>
+<div align="center">
+<h2 align="center">Android Application</h2>
+<div id="start" align="center">
+    <h3>Start Page</h3>
+    <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/AppImages/AppStart.jpg"
+         id="S" alt="Create Account" class="modal-content android" height="450px" width="20% !important" >
+    <div id="SM" class="modal">
+        <img class="modal-content" id="Smodal">
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('SM');
+        var img = document.getElementById('S');
+        var modalImg = document.getElementById("Smodal");
+        img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <p>The user can either create an account if you do not have one or login if you already have an account.</p>
+</div>
+<p>&nbsp;</p>
+<div id="CreateAccount" align="center">
+    <h3>Create Account</h3>
+    <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/AppImages/AppCreateAccount.jpg"
+         id="CA" alt="Create Account" class="modal-content android" height="450px" width="10px" >
+    <div id="CAM" class="modal">
+        <img class="modal-content" id="CAmodal">
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('CAM');
+        var img = document.getElementById('CA');
+        var modalImg = document.getElementById("CAmodal");
+        img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <p>The user will be given a random username and must make a password that satisfies the 4 conditions shown.
+    The conditions will update as the user is typing their custom password and the conditions that must be met are
+    having a password that uses a upper and lower case character, a special character, a number, and must be at least 8 characters long.</p>
+</div>
+<p>&nbsp;</p>
+<div id="Login" align="center">
+    <h3>Login</h3>
+    <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/AppImages/AppLogin.jpg"
+         id="L" alt="Create Account" class="modal-content android" height="450px" width="10px" >
+    <div id="LM" class="modal">
+        <img class="modal-content" id="Lmodal">
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('LM');
+        var img = document.getElementById('L');
+        var modalImg = document.getElementById("Lmodal");
+        img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <p>If the user already has an account then they will go to the login screen to type in their username and password to login.</p>
+</div>
+<p>&nbsp;</p>
+<div id="Menu" align="center">
+    <h3>Menu Page</h3>
+    <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/AppImages/AppMenu.jpg"
+         id="M" alt="Create Account" class="modal-content android" height="450px" width="10px" >
+    <div id="MM" class="modal">
+        <img class="modal-content" id="Mmodal">
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('MM');
+        var img = document.getElementById('M');
+        var modalImg = document.getElementById("Mmodal");
+        img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <p>On the menu page the user can either go to forms to complete or update any information that they have saved.</p>
+</div>
+<p>&nbsp;</p>
+<div id="Form" align="center">
+    <h3>Form Page</h3>
+    <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/AppImages/AppForm.jpg"
+         id="F" alt="Create Account" class="modal-content android" height="450px" width="10px" >
+    <div id="FM" class="modal">
+        <img class="modal-content" id="Fmodal">
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('FM');
+        var img = document.getElementById('F');
+        var modalImg = document.getElementById("Fmodal");
+        img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <p>The form page will take a user to either part of our main form.</p>
+</div>
+<p>&nbsp;</p>
+<div id="Application" align="center">
+    <h3>Application Page</h3>
+    <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/AppImages/AppApplication.jpg"
+         id="A" alt="Create Account" class="modal-content android" height="450px" width="10px" >
+    <div id="AM" class="modal">
+        <img class="modal-content" id="Amodal">
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('AM');
+        var img = document.getElementById('A');
+        var modalImg = document.getElementById("Amodal");
+        img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <p>This is a look at our main form that the user would have to fill out.</p>
+</div>
+<p>&nbsp;</p>
+<div id="Update" align="center">
+    <h3>Update Information Page</h3>
+    <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/AppImages/AppUpdate.jpg"
+         id="U" alt="Create Account" class="modal-content android" height="450px" width="10px" >
+    <div id="UM" class="modal">
+        <img class="modal-content" id="Umodal">
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('UM');
+        var img = document.getElementById('U');
+        var modalImg = document.getElementById("Umodal");
+        img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <p>On the update information page the user is able to navigate to either updating any new medications,
+    new surgeries or personal information.</p>
+</div>
+<p>&nbsp;</p>
+<div id="Example" align="center">
+    <h3>Update Information Example Page</h3>
+    <img src="https://raw.githubusercontent.com/Andrew-Garofalo/cdl-prescreener/master/AppImages/AppAddEx.jpg"
+         id="E" alt="Create Account" class="modal-content android" height="450px" width="10px" >
+    <div id="EM" class="modal">
+        <img class="modal-content" id="Emodal">
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('EM');
+        var img = document.getElementById('E');
+        var modalImg = document.getElementById("Emodal");
+        img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <p>The user is able to add new medications that they make have.</p>
+</div>
+</div>
+</body>
+</html>
